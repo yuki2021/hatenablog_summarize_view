@@ -32,6 +32,7 @@ export default {
           },
           body: JSON.stringify({ url: urlValue }),
         });
+        console.log(response);
         if (response.ok) {
           const data = await response.json();
           
@@ -40,7 +41,6 @@ export default {
           } else {
             console.log('要約データが存在しませんでした');
             console.log(data);
-            console.log('jsonデータ', response.json());
           }
         }
       } catch (error) {
