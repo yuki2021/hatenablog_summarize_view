@@ -34,17 +34,23 @@ export default {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
-          if (data.result !== undefined) {
+          
+          if (data.result !== undefined && data.result !== '' && data.result !== null) {
             this.abstract = data.result;
           } else {
             console.log('要約データが存在しませんでした');
+            console.log(data);
+            console.log('jsonデータ', response.json());
           }
         }
       } catch (error) {
         console.log('jsonを取得できませんでした。(getAbstract)', error);
       }
     },
+    // 仮のデータ
+    // getAbstract() {
+    //   this.abstract = 'ここに要約のテキストが入ります。';
+    // },
     toggleAbstract() {
       this.showAbstract = !this.showAbstract;
       this.buttonText = this.showAbstract ? '要約をかくす' : '要約をみる';
