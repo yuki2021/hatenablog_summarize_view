@@ -13,13 +13,13 @@
 export default {
   data() {
     return {
-      abstract: '', // 要約のテキストを保持
-      showAbstract: false, // 要約を表示するかどうかのフラグ
-      buttonText: '要約をみる', // ボタンのテキスト
+      abstract: '',
+      showAbstract: false,
+      buttonText: '要約をみる',
     };
   },
   mounted() {
-    this.getAbstract(); // コンポーネントがマウントされたら要約を取得
+    this.getAbstract();
   },
   methods: {
     async getAbstract() {
@@ -54,7 +54,7 @@ export default {
       el.style.height = '0';
     },
     enter(el, done) {
-      el.offsetHeight; // これは重要です。これにより、ブラウザにCSSの変更を強制させます。
+      el.offsetHeight;
       el.style.transition = 'height 0.3s ease';
       el.style.height = `${el.scrollHeight}px`;
       el.addEventListener('transitionend', done);
