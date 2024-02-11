@@ -10,9 +10,9 @@ function initializeVueApp() {
             const mountPoint = document.createElement('div');
             mountPoint.id = `vue-app-mount-point`;
             // if (pElements[i].nextSibling) {
-                pElements[i].parentNode.insertBefore(mountPoint, pElements[i].nextSibling);
+                // pElements[i].parentNode.insertBefore(mountPoint, pElements[i].nextSibling);
             // } else {
-            //     pElements[i].parentNode.appendChild(mountPoint);
+                pElements[i].parentNode.appendChild(mountPoint);
             // }
             createApp(App).mount(`#vue-app-mount-point`);
             inserted = true; // マウントポイントを挿入したらループを抜ける
