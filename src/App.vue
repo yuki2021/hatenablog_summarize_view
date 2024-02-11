@@ -34,6 +34,7 @@ export default {
         });
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           if (data.result !== undefined) {
             this.abstract = data.result;
           } else {
