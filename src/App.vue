@@ -3,7 +3,7 @@
     <div class="abstract-link">
       <a href="javascript:void(0);" @click="toggleAbstract" class="btn btn--blue">{{ buttonText }}</a>
       <transition name="slide-fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
-        <nav v-if="showAbstract" class="abstract-nav">{{ abstract }}</nav>
+        <nav v-if="showAbstract" class="abstract-nav" v-html="abstract"></nav>
       </transition>
     </div>
   </div>
@@ -32,7 +32,6 @@ export default {
           },
           body: JSON.stringify({ url: urlValue }),
         });
-        console.log(response);
         if (response.ok) {
           const data = await response.json();
           
@@ -47,10 +46,6 @@ export default {
         console.log('jsonを取得できませんでした。(getAbstract)', error);
       }
     },
-    // 仮のデータ
-    // getAbstract() {
-    //   this.abstract = 'ここに要約のテキストが入ります。';
-    // },
     toggleAbstract() {
       this.showAbstract = !this.showAbstract;
       this.buttonText = this.showAbstract ? '要約をかくす' : '要約をみる';
