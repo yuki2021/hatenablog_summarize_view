@@ -71,4 +71,82 @@ export default {
 .abstract-nav {
   overflow: hidden;
 }
+
+.entry-content .abstract-link {
+    position: relative;
+    margin: 36px 0 16px;
+    padding: 16px 10px;
+    border: 2px solid #1056a2;
+    background-color: #fffbf5;
+	min-height: 48px;
+}
+.entry-content .abstract-link p:last-child {
+    margin-bottom: 0;
+}
+.entry-content .abstract-link::before {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    padding: 0 10px 0 26px;
+    content: "記事要約";
+    background-color: #1056a2;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.entry-content .abstract-link::after {
+    position: absolute;
+    top: -16px;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    background-color: #1056a2;
+    border-radius: 14px;
+    line-height: 25px;
+    text-align: center;
+    content: "\f010";
+    font-size: 18px;
+    font-family: "blogicon";
+    color: #fff;
+}
+
+/* 要約を開くボタン */
+.btn,
+a.btn,
+button.btn {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 5px 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--blue,
+a.btn--blue {
+  display: block;
+  margin: 10px 15%;
+  color: #fff;
+  background-color: #668ad8;
+}
+.btn--blue:hover,
+a.btn--blue:hover {
+  color: #fff;
+  background: #668ad8;
+}
 </style>
